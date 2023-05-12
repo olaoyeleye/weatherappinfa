@@ -53,7 +53,8 @@ resource "aws_security_group" "expose-ssh-tomcat" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = [aws_vpc.sapphire-vpc-1.cidr_block]
+    cidr_blocks = ["0.0.0.0/0"]
+   # cidr_blocks = [aws_vpc.sapphire-vpc-1.cidr_block]
   }
   ingress {
     description = "exposing port for tomcat from VPC"
